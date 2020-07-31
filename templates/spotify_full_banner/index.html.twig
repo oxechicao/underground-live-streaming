@@ -21,7 +21,12 @@
 </head>
 
 <body>
-<div id="spotify-banner" data-refresh="{{ refresh }}" data-float="{{ float }}">
+<div
+  id="spotify-banner"
+  data-baseurl="{{ app.request.getSchemeAndHttpHost() }}"
+  data-refresh="{{ refresh }}"
+  data-float="{{ float }}"
+>
   <div
     class="spotify-banner-box animate__animated animate__flipInX"
     id="spotify-full"

@@ -1,4 +1,5 @@
-fetch('http://localhost:8090/spotify/playlist')
+const baseURL = document.getElementById('base_data').dataset.baseurl
+fetch(baseURL + '/spotify/playlist')
   .then(response => response.json())
   .then(artists => {
     document.getElementById('amount-artists').innerHTML = ` ${Object.keys(artists).length} `

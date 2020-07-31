@@ -289,7 +289,8 @@
       type="text"
       value=""
     />
-    <script src="{{ asset('scripts/landing_page.js') }}"></script>
   </div>
+  <div id="base_data" data-baseurl="{{ app.request.getSchemeAndHttpHost() }}"></div>
+  <script src="{{ asset('scripts/landing_page.js') }}"></script>
 </div>
 </body>

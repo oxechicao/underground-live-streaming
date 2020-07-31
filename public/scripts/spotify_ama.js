@@ -1,5 +1,6 @@
 const refresh = document.getElementById('spotify-banner').dataset.refresh
 const float = document.getElementById('spotify-banner').dataset.float
+const baseURL = document.getElementById('spotify-banner').dataset.baseurl
 
 const spotify = document.getElementById('spotify-full')
 spotify.style.display = 'none'
@@ -62,7 +63,7 @@ const noneSpotify = () => {
   animationOff()
 }
 
-const getSong = () => fetch(`/spotify/current-song/${refresh}/650`)
+const getSong = () => fetch(`${baseURL}/spotify/current-song/${refresh}/650`)
   .then(response => response.json())
   .then(result => {
     const {
