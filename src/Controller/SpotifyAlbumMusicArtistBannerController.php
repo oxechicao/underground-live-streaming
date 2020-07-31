@@ -16,7 +16,8 @@ class SpotifyAlbumMusicArtistBannerController extends AbstractController
         return $this->render('spotify_full_banner/index.html.twig', [
             'token' => $token,
             'refresh' => $refresh,
-            'float' => 'left'
+            'float' => 'left',
+            'baseURL' => $_ENV['SITE_URL']
         ]);
     }
 
@@ -28,7 +29,8 @@ class SpotifyAlbumMusicArtistBannerController extends AbstractController
         return $this->render('spotify_full_banner/index.html.twig', [
             'token' => $token,
             'refresh' => $refresh,
-            'float' => 'right'
+            'float' => 'right',
+            'baseURL' => $_ENV['SITE_URL']
         ]);
     }
 }
