@@ -1,0 +1,51 @@
+<?php
+
+
+namespace App\Controller;
+
+use App\Service\Spotify\Auth;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Generator\UrlGenerator;
+
+
+class SpotifyLogin extends AbstractController
+{
+    /**
+     * @Route("/spotify/login", name="spotify.login")
+     */
+    public function login(Auth $auth, SessionInterface $session)
+    {
+        $state = substr(str_replace(['+', '/', '='], '', base64_encode(random_bytes(32))), 0, 16);
+        $session->set('state_login', $state);
+        return $this->redirect(
+            $auth->getRouteRedirect(
+                $this->generateUrl('spotify.callback', [], UrlGenerator::ABSOLUTE_URL),
+                $state
+            )
+        );
+    }
+
+    /**
+     * @Route("/spotify/callback", name="spotify.callback")
+     */
+    public function callback(Request $request, Auth $auth, SessionInterface $session)
+    {
+        if ($session->get('state_login') !== $request->query->get('state')) {
+            die('login failed');
+        }
+        $session->remove('state_login');
+        $data = $auth->getToken(
+            $request->query->get('code'),
+            $this->generateUrl('spotify.callback', [], UrlGenerator::ABSOLUTE_URL)
+        );
+
+        $session->set('refresh', $data['refresh_token']);
+        $session->set('token', $data['access_token']);
+
+        return $this->redirectToRoute('home');
+    }
+}

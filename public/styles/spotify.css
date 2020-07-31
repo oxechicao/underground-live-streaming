@@ -1,0 +1,113 @@
+#spotify-full-current-music {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  margin-top: -15px; }
+
+#spotify-full-text-content {
+  position: absolute;
+  top: 0; }
+
+#spotify-imagem-full-horizontal {
+  box-shadow: 1px 5px 5px black;
+  border-radius: 30px; }
+
+#spotify-full-background {
+  border-radius: 30px;
+  margin-top: 46px;
+  filter: blur(8px);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: auto; }
+
+.spotify-banner-box {
+  max-width: 800px;
+  color: white; }
+
+.spotify-box-music {
+  box-sizing: border-box;
+  height: 240px;
+  width: auto; }
+
+.spotify-horizontal-box-music {
+  box-sizing: border-box;
+  height: 240px;
+  width: auto; }
+
+.spotify-flex-right {
+  float: right; }
+
+.spotify-full-left-current-music {
+  left: 0;
+  margin-left: 20px; }
+
+.spotify-full-right-current-music {
+  left: 0;
+  margin-left: 20px; }
+
+.spotify-full-left-text {
+  margin-left: 240px;
+  margin-top: 15px;
+  max-width: 567px; }
+
+.spotify-full-box-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 150px; }
+
+.spotify-full-right-text {
+  text-align: right;
+  margin-left: 20px; }
+
+.spotify-music-artist-inline-box-content {
+  height: 90px;
+  padding-left: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 12px; }
+
+.spotify-music-artist-inline-texts {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline; }
+
+.spotify-full-right-text-box {
+  align-items: flex-end; }
+
+.spotify-full-background-indo {
+  height: 177px; }
+
+.spotify-horizontal-background-info {
+  height: 120px; }
+
+.spotify-album-music-text {
+  font-size: 26pt;
+  font-weight: bold;
+  font-family: cursive;
+  text-shadow: 1px 2px 5px #000;
+  color: white;
+  width: fit-content; }
+
+.spotify-album-artist-text {
+  border-radius: 15px;
+  color: white;
+  text-transform: uppercase;
+  font-size: 18pt;
+  font-weight: bold;
+  font-family: sans-serif;
+  padding: 7px 14px;
+  width: fit-content;
+  background-color: #00000022;
+  margin-right: 15px; }
+
+.spotify-horizontal-music-name {
+  font-size: 26pt; }
+
+.spotify-horizontal-artist-name {
+  font-size: 20pt; }
+
+/*# sourceMappingURL=spotify.styles.map */

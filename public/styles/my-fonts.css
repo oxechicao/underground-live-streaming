@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "Acumin Pro ExtraCondensed";
+  src: url("../fonts/acumin-pro-extracondensed/0d636ca4d8f9321a0810aebd25f3a338.eot"); /* IE9*/
+  src: url("../fonts/acumin-pro-extracondensed/0d636ca4d8f9321a0810aebd25f3a338.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */ url("../fonts/acumin-pro-extracondensed/0d636ca4d8f9321a0810aebd25f3a338.woff2") format("woff2"), /* chrome、firefox */ url("../fonts/acumin-pro-extracondensed/0d636ca4d8f9321a0810aebd25f3a338.woff") format("woff"), /* chrome、firefox */ url("../fonts/acumin-pro-extracondensed/0d636ca4d8f9321a0810aebd25f3a338.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url("../fonts/acumin-pro-extracondensed/0d636ca4d8f9321a0810aebd25f3a338.svg#Acumin Pro ExtraCondensed") format("svg"); /* iOS 4.1- */
+}
+
+
+@font-face {
+  font-family: "Acumin Pro Condensed";
+  src: url("../fonts/acumin-pro-condensed/9d98f534f006d8c613a5dc3ace7fe507.eot"); /* IE9*/
+  src: url("../fonts/acumin-pro-condensed/9d98f534f006d8c613a5dc3ace7fe507.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */ url("../fonts/acumin-pro-condensed/9d98f534f006d8c613a5dc3ace7fe507.woff2") format("woff2"), /* chrome、firefox */ url("../fonts/acumin-pro-condensed/9d98f534f006d8c613a5dc3ace7fe507.woff") format("woff"), /* chrome、firefox */ url("../fonts/acumin-pro-condensed/9d98f534f006d8c613a5dc3ace7fe507.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url("../fonts/acumin-pro-condensed/9d98f534f006d8c613a5dc3ace7fe507.svg#Acumin Pro Condensed") format("svg"); /* iOS 4.1- */
+}
+
+
+@font-face {
+  font-family: "AcuminPro";
+  src: url("../fonts/acumin-pro/4eea0b56eeb6549def65619b1957eb8d.eot"); /* IE9*/
+  src: url("../fonts/acumin-pro/4eea0b56eeb6549def65619b1957eb8d.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */ url("../fonts/acumin-pro/4eea0b56eeb6549def65619b1957eb8d.woff2") format("woff2"), /* chrome、firefox */ url("../fonts/acumin-pro/4eea0b56eeb6549def65619b1957eb8d.woff") format("woff"), /* chrome、firefox */ url("../fonts/acumin-pro/4eea0b56eeb6549def65619b1957eb8d.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url("../fonts/acumin-pro/4eea0b56eeb6549def65619b1957eb8d.svg#AcuminPro-Medium") format("svg"); /* iOS 4.1- */
+}
+
+@font-face {
+  font-family: 'Acumin Pro';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Acumin Pro"), url("Acumin-RPro.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Acumin Pro Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Acumin Pro Italic"), url("Acumin-ItPro.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Acumin Pro Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Acumin Pro Bold"), url("Acumin-BdPro.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Acumin Pro Bold Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Acumin Pro Bold Italic"), url("Acumin-BdItPro.woff") format("woff"); }
+

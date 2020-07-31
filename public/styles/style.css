@@ -1,0 +1,211 @@
+@import url(my-fonts.css);
+@media only screen and (max-width: 1375px) {
+  .container {
+    width: 800px; } }
+
+@media only screen and (min-width: 1376px) {
+  .container {
+    width: 1376px; } }
+
+@font-face {
+  font-family: 'Acumin Pro';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Acumin Pro"), url("Acumin-RPro.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Acumin Pro Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Acumin Pro Italic"), url("Acumin-ItPro.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Acumin Pro Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Acumin Pro Bold"), url("Acumin-BdPro.woff") format("woff"); }
+
+@font-face {
+  font-family: 'Acumin Pro Bold Italic';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Acumin Pro Bold Italic"), url("Acumin-BdItPro.woff") format("woff"); }
+
+body {
+  background: url("../images/bg-guitar.png");
+  background-color: #0e0e0e;
+  background-size: contain;
+  background-position-x: right;
+  background-repeat: no-repeat;
+  color: #e9e9e9;
+  min-height: 100vh;
+  font-family: "AcuminPro";
+  margin: 0; }
+
+#body {
+  background: linear-gradient(180deg, rgba(20, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.9) 50%);
+  width: 100%;
+  display: flex;
+  justify-content: center; }
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px !important; }
+
+.footer p {
+  font-size: 10pt;
+  color: white;
+  text-align: center; }
+
+.footer-magika > a {
+  font-size: 14pt;
+  color: white;
+  font-weight: bold;
+  text-decoration: none; }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 70px; }
+
+.text-spacing {
+  letter-spacing: 2px; }
+
+.landing-top {
+  display: flex;
+  justify-content: space-between; }
+
+.landing-wrap {
+  flex-wrap: wrap; }
+
+.logo-site {
+  height: 200px;
+  width: 500px; }
+
+.follow-us-item {
+  margin-left: 10px; }
+
+.follow-us-text {
+  font-size: 24pt; }
+
+.landing-row {
+  margin-top: 60px; }
+
+.landing-row-v-center {
+  align-items: center; }
+
+.landing-title-section {
+  font-size: 22pt; }
+
+.landing-big-title-section {
+  font-size: 28pt;
+  font-family: "Acumin Pro Condensed";
+  text-align: center; }
+
+#need-login {
+  font-size: 18pt;
+  font-family: "Acumin Pro Condensed";
+  color: #6c1807; }
+
+.lading-list-items {
+  padding-left: 20px; }
+
+.lading-list-items > li {
+  font-size: 13pt;
+  line-height: 3; }
+
+.lading-list-items > li > a {
+  text-decoration: none;
+  color: inherit; }
+
+.landing-model-urls {
+  display: flex; }
+
+.landing-faca-live {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+.botoes-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+a {
+  color: #00B7FF; }
+
+.form-newsletter {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px; }
+
+.input-layout {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #2e2e2e;
+  width: 100%;
+  padding: 10px;
+  color: #2e2e2e;
+  font-family: "Acumin Pro ExtraCondensed";
+  text-align: center; }
+
+.input-layout::placeholder {
+  color: #2e2e2e; }
+
+.input-layout:focus {
+  color: #e9e9e9;
+  outline: none; }
+
+.input-newsletter {
+  margin-bottom: 10px;
+  font-size: 14pt; }
+
+.spotify-button {
+  font-weight: bolder;
+  font-size: 12pt;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: #1DB954;
+  color: #FFFFFF;
+  text-decoration: none; }
+
+.button-layout {
+  background: linear-gradient(45deg, #5e0807 50%, #400605 51%);
+  border: none;
+  text-decoration: none;
+  color: #f0f0f0;
+  font-family: "Acumin Pro Condensed"; }
+
+.button-banner {
+  padding: 5px 15px;
+  border-radius: 15px; }
+
+.button-newsletter {
+  padding: 15px 60px;
+  border-radius: 30px;
+  font-size: 14pt; }
+
+.list-artists {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; }
+
+.link-artist-name {
+  text-decoration: none;
+  color: #e9e9e9;
+  margin: 15px; }
+
+.box-artist-name {
+  font-family: 'Acumin Pro Bold';
+  font-size: 20pt;
+  font-weight: bold;
+  text-transform: uppercase; }
+
+.follow-us div {
+  display: flex;
+  align-items: baseline; }
+
+/*# sourceMappingURL=style.styles.map */

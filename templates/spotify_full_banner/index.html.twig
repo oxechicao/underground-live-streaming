@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link
+    rel="stylesheet"
+    href="{{ asset('styles/layout.css') }}"
+  >
+  <link
+    rel="stylesheet"
+    href="{{ asset('styles/my-fonts.css') }}"
+  >
+  <link
+    rel="stylesheet"
+    href="{{ asset('styles/spotify.css') }}"
+  >
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
+</head>
+
+<body>
+<div id="spotify-banner" data-refresh="{{ refresh }}" data-float="{{ float }}">
+  <div
+    class="spotify-banner-box animate__animated animate__flipInX"
+    id="spotify-full"
+  >
+    <div
+      class="spotify-box-music"
+      id="id-spotify-box-music"
+    >
+      <div
+        class="spotify-full-background-indo animate__animated animate__fadeIn animate__delay-1s"
+        id="spotify-full-background"
+      ></div>
+      <div
+        class="spotify-full-left-text animate__animated animate__fadeIn animate__delay-1s"
+        id="spotify-full-text-content"
+      >
+        <div
+          class="spotify-full-box-text animate__animated animate__slideInLeft animate__delay-1s"
+          id="spotify-full-text-box"
+        >
+          <span
+            class="spotify-album-music-text"
+            id="spotify-music-full-horizontal"
+          ></span>
+          <span
+            class="spotify-album-artist-text"
+            id="spotify-artist-full-horizontal"
+          ></span>
+        </div>
+      </div>
+      <div
+        class="spotify-full-left-current-music animate__animated animate__zoomIn"
+        id="spotify-full-current-music"
+      >
+        <div class="spotify-full-values">
+          <img
+            id="spotify-imagem-full-horizontal"
+            width="200px"
+            height="200px"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>
+
+<script src="{{ asset('scripts/spotify_ama.js') }}"></script>

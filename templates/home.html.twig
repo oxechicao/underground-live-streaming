@@ -1,0 +1,295 @@
+<head>
+  <title>Underground Live Streaming</title>
+  <link
+    rel="stylesheet"
+    href="{{ asset('styles/style.css') }}"
+  />
+  <link
+    rel="icon"
+    href="{{ asset('images/fav-w.png') }}"
+    type="image/png"
+    sizes="16x16"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
+</head>
+
+<body>
+<div id="body">
+  <div class="container">
+    <div class="landing-top">
+      <div class="logo-site"><img src="{{ asset('images/logo.png') }}"/></div>
+      <div class="landing-title-section follow-us">
+        <div>
+          <span class="follow-us-item follow-us-text">Follow us</span>
+          <a
+            href="https://open.spotify.com/playlist/6VGRKNjJCjxGm3xKob5ef5"
+            target="_brank"
+          >
+            <img
+              class="follow-us-item"
+              src="{{ asset('images/spotify-logo.png') }}"
+              width="30px"
+              height="30px"
+            />
+          </a>
+          <a
+            href="https://www.instagram.com/undergroundlivestreaming/"
+            target="_brank"
+          >
+            <img
+              class="follow-us-item"
+              src="{{ asset('images/instagram-logo.png') }}"
+              width="30px"
+              height="30px"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="landing-row">
+      <div>
+        <p class="landing-title-section">ADICIONE A PLAYLIST À SUA LIVE</p>
+      </div>
+      <div>
+        <ol class="lading-list-items text-spacing">
+          <li>
+            Faça login no spotify &nbsp;
+            <a
+              class="spotify-button"
+              href="{{ path('spotify.login') }}"
+            >
+              Login Spotify
+            </a>
+          </li>
+          <li>Copie a URL de algum modelo abaixo, alinhado a direita ou a esquerda</li>
+          <li>Adicione à um navegador a sua cena no OBS a URL</li>
+          <li>Defina o tamanho do navegador de acordo com o modelo</li>
+          <li>
+            <a
+              href="https://open.spotify.com/playlist/6VGRKNjJCjxGm3xKob5ef5"
+              target="_brank"
+            >
+              Dê um play na
+              <strong> Underground Live Streaming </strong>
+              <span>(link)</span>
+            </a>
+          </li>
+        </ol>
+      </div>
+    </div>
+    <div class="landing-row">
+      <div>
+        <p class="landing-title-section">MODELOS</p>
+        {% if not app.session.get('refresh') %}
+          <p id="need-login">Faça login no Spotify para copiar as url</p>
+        {% endif %}
+      </div>
+      <div class="landing-top landing-wrap">
+        <div class="landing-model-urls">
+          <div>
+            <div>
+              <span class="text-spacing">Modelo Completo (800x240)</span>
+              <br/>
+              <img
+                src="{{ asset('images/modelo-completo.JPG') }}"
+                height="130px"
+              />
+            </div>
+
+            {% if app.session.get('refresh') %}
+              <div class="landing-top buttons-links">
+                <div class="botoes-link">
+                  <button
+                    class="button-layout button-banner"
+                    type="button"
+                    onclick="copiarUrl('ama')"
+                  >
+                    Copiar à esquerda
+                  </button>
+                  <a
+                    id="ama-l-link"
+                    target="_blank"
+                    href="{{ path('spotify.ama.l',{token: app.session.get('token'), refresh: app.session.get('refresh')}) }}"
+                  >
+                    <img
+                      src="{{ asset('images/external-link.png') }}"
+                      style="filter: invert(1)"
+                      width="16px"
+                    />
+                  </a>
+                </div>
+                <div
+                  class="botoes-link"
+                >
+                  <button
+                    class="button-layout button-banner"
+                    type="button"
+                    onclick="copiarUrl('amar')"
+                  >
+                    Copiar à direita
+                  </button>
+                  <a
+                    id="ama-r-link"
+                    target="_blank"
+                    href="{{ path('spotify.ama.r',{'token': app.session.get('token'), 'refresh': app.session.get('refresh')}) }}"
+                  >
+                    <img
+                      src="{{ asset('images/external-link.png') }}"
+                      style="filter: invert(1)"
+                      width="16px"
+                    />
+                  </a>
+                </div>
+              </div>
+            {% endif %}
+
+          </div>
+          <div style="margin-left: 4rem">
+            <div>
+              <span class="text-spacing">Modelo Simplificador (800x120)</span>
+              <br/>
+              <img
+                src="{{ asset('images/modelo-simplificado.JPG') }}"
+                height="80px"
+              />
+            </div>
+            {% if app.session.get('refresh') %}
+              <div class="landing-top buttons-links">
+                <div class="botoes-link">
+                  <button
+                    class="button-layout button-banner"
+                    type="button"
+                    onclick="copiarUrl('ma')"
+                  >
+                    Copiar à esquerda
+                  </button>
+                  <a
+                    id="ma-l-link"
+                    target="_blank"
+                    href="{{ path('spotify.ma.l',{'token': app.session.get('token'), 'refresh': app.session.get('refresh')}) }}"
+                  >
+                    <img
+                      src="{{ asset('images/external-link.png') }}"
+                      style="filter: invert(1)"
+                      width="16px"
+                    />
+                  </a>
+                </div>
+                <div
+                  class="botoes-link"
+                >
+                  <button
+                    class="button-layout button-banner"
+                    type="button"
+                    onclick="copiarUrl('mar')"
+                  >Copiar à direita
+                  </button>
+                  <a
+                    id="ma-r-link"
+                    target="_blank"
+                    href="{{ path('spotify.ma.r',{'token': app.session.get('token'), 'refresh': app.session.get('refresh')}) }}"
+                  >
+                    <img
+                      src="{{ asset('images/external-link.png') }}"
+                      style="filter: invert(1)"
+                      width="16px"
+                    />
+                  </a>
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="landing-faca-live">
+          <img src="{{ asset('images/Raio.png') }}"/>
+          <img src="{{ asset('images/faca-live.png') }}"/>
+          <div style="margin-top: 10px">
+            <span>www.</span>
+            <strong>undergroundlivestreaming</strong>
+            <span>.com.br</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="landing-row animate__animated animate__pulse animate__infinite"
+      id="artists-counting"
+    >
+      <p class="landing-big-title-section">FAZENDO A CONTAGEM DAS BANDAS...</p>
+    </div>
+    <div
+      class="animate__animated animate__fadeIn animate__slower"
+      id="box-artists"
+      style="display: none"
+    >
+      <div class="landing-row">
+        <div class="landing-top landing-row-v-center">
+          <p class="landing-title-section">
+            São
+            <strong id="amount-artists"></strong>
+            <span>bandas apoiando o projeto.</span>
+            <br/>
+            <span
+              class="text-spacing"
+              style="font-size: 10pt"
+            >
+              Bandas ordenadas aleatoriamente. Clique na banda para acessar o material.
+            </span>
+          </p>
+          <div>
+            <a
+              href="https://www.instagram.com/undergroundlivestreaming/"
+              target="_blank"
+            >
+              <button
+                class="button-layout button-newsletter"
+                type="button"
+              >
+                INDIQUE UMA BANDA
+                <br/>
+                <span style="font-size: 10pt; letter-spacing: 1px">Envie-nos mensagem no instagram</span>
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="landing-row">
+        <div
+          class="list-artists"
+          id="artists-list"
+        ></div>
+      </div>
+    </div>
+    <div class="landing-row footer">
+      <div>
+        <img
+          src="{{ asset('images/chicao-logo-w.png') }}"
+          height="40px"
+        />
+      </div>
+      <div>
+        <p class="footer-magika text-spacing">
+          <a
+            href="https://www.instagram.com/magikadigital/"
+            target="_blank"
+          >
+            &#9829; Designed by Magika Digital &#9829;
+          </a>
+        </p>
+        <p>undergroundlivestreaming@gmail.com</p>
+        <p>&#169; 2020 UNDERGOUND LIVE STREAMING | TODOS DIREITOS RESERVADOS</p>
+      </div>
+    </div>
+    <input
+      hidden="hidden"
+      id="copyurl"
+      type="text"
+      value=""
+    />
+    <script src="{{ asset('scripts/landing_page.js') }}"></script>
+  </div>
+</div>
+</body>

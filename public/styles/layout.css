@@ -1,0 +1,13 @@
+.row {
+  display: flex;
+  width: 100%; }
+
+.column {
+  display: flex;
+  flex-direction: column; }
+
+span {
+  display: block;
+  width: 100%; }
+
+/*# sourceMappingURL=layout.styles.map */
