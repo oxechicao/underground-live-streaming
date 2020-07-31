@@ -21,9 +21,13 @@ class SpotifyLogin extends AbstractController
     {
         $state = substr(str_replace(['+', '/', '='], '', base64_encode(random_bytes(32))), 0, 16);
         $session->set('state_login', $state);
+        $redirectUri = $_ENV['APP_ENV'] !== 'prod'
+            ? $this->generateUrl('spotify.callback', [], UrlGenerator::ABSOLUTE_URL)
+            : str_replace('http:', 'https:', $this->generateUrl('spotify.callback', [], UrlGenerator::ABSOLUTE_URL));
+
         return $this->redirect(
             $auth->getRouteRedirect(
-                $this->generateUrl('spotify.callback', [], UrlGenerator::ABSOLUTE_URL),
+                $redirectUri,
                 $state
             )
         );
@@ -37,10 +41,15 @@ class SpotifyLogin extends AbstractController
         if ($session->get('state_login') !== $request->query->get('state')) {
             die('login failed');
         }
+
+        $redirectUri = $_ENV['APP_ENV'] !== 'prod'
+            ? $this->generateUrl('spotify.callback', [], UrlGenerator::ABSOLUTE_URL)
+            : str_replace('http:', 'https:', $this->generateUrl('spotify.callback', [], UrlGenerator::ABSOLUTE_URL));
+
         $session->remove('state_login');
         $data = $auth->getToken(
             $request->query->get('code'),
-            $this->generateUrl('spotify.callback', [], UrlGenerator::ABSOLUTE_URL)
+            $redirectUri
         );
 
         $session->set('refresh', $data['refresh_token']);
