@@ -1,0 +1,11 @@
+.faq-question > p {
+    font-family: "Acumin Pro Condensed", sans-serif;
+    letter-spacing: 2px;
+    font-size: 18pt;
+}
+
+.faq-answer > p {
+    letter-spacing: 2px;
+    font-size: 18px;
+    line-height: 1.5;
+}

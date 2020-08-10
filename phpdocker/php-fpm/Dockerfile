@@ -11,5 +11,7 @@ RUN apt-get update \
 
 # Install git
 RUN apt-get update \
-    && apt-get -y install git \
+    && apt-get -y install git nano \
     && apt-get clean; rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
+
+RUN usermod -a -G root www-data

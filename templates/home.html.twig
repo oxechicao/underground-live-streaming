@@ -5,6 +5,10 @@
     href="{{ asset('styles/style.css') }}"
   />
   <link
+    rel="stylesheet"
+    href="{{ asset('styles/faq.css') }}"
+  />
+  <link
     rel="icon"
     href="{{ asset('images/fav-w.png') }}"
     type="image/png"
@@ -14,6 +18,7 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
   />
+  {% include 'metatags.twig' %}
 </head>
 
 <body>
@@ -22,34 +27,43 @@
     <div class="landing-top">
       <div class="logo-site"><img src="{{ asset('images/logo.png') }}"/></div>
       <div class="landing-title-section follow-us">
-        <div>
-          <span class="follow-us-item follow-us-text">Follow us</span>
-          <a
-            href="https://open.spotify.com/playlist/6VGRKNjJCjxGm3xKob5ef5"
-            target="_brank"
-          >
-            <img
-              class="follow-us-item"
-              src="{{ asset('images/spotify-logo.png') }}"
-              width="30px"
-              height="30px"
-            />
-          </a>
-          <a
-            href="https://www.instagram.com/undergroundlivestreaming/"
-            target="_brank"
-          >
-            <img
-              class="follow-us-item"
-              src="{{ asset('images/instagram-logo.png') }}"
-              width="30px"
-              height="30px"
-            />
-          </a>
+        <div class="landing-menu">
+          <div class="follow-us-item follow-us-text">
+            <a href="#in-live">Na Live</a>
+            <a href="#artists">Bandas</a>
+            <a href="#faq">Sobre</a>
+          </div>
+          <div class="follow-us-links">
+            <a
+              href="https://open.spotify.com/playlist/6VGRKNjJCjxGm3xKob5ef5"
+              target="_brank"
+            >
+              <img
+                class="follow-us-item"
+                src="{{ asset('images/spotify-logo.png') }}"
+                width="30px"
+                height="30px"
+              />
+            </a>
+            <a
+              href="https://www.instagram.com/undergroundlivestreaming/"
+              target="_brank"
+            >
+              <img
+                class="follow-us-item"
+                src="{{ asset('images/instagram-logo.png') }}"
+                width="30px"
+                height="30px"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </div>
-    <div class="landing-row">
+    <div
+      id="in-live"
+      class="landing-row"
+    >
       <div>
         <p class="landing-title-section">ADICIONE A PLAYLIST À SUA LIVE</p>
       </div>
@@ -79,6 +93,21 @@
           </li>
         </ol>
       </div>
+      <a
+        href="https://open.spotify.com/playlist/6VGRKNjJCjxGm3xKob5ef5"
+        target="_brank"
+        class="spotify-button listen-button"
+        style="width: 200px"
+      >
+
+        <span>Ouça no Spotify</span>
+        <img
+          class="listen-button-icon"
+          src="{{ asset('images/spotify-logo.png') }}"
+          width="30px"
+          height="30px"
+        />
+      </a>
     </div>
     <div class="landing-row">
       <div>
@@ -214,56 +243,72 @@
         </div>
       </div>
     </div>
-    <div
-      class="landing-row animate__animated animate__pulse animate__infinite"
-      id="artists-counting"
-    >
-      <p class="landing-big-title-section">FAZENDO A CONTAGEM DAS BANDAS...</p>
-    </div>
-    <div
-      class="animate__animated animate__fadeIn animate__slower"
-      id="box-artists"
-      style="display: none"
-    >
-      <div class="landing-row">
-        <div class="landing-top landing-row-v-center">
-          <p class="landing-title-section">
-            São
-            <strong id="amount-artists"></strong>
-            <span>bandas apoiando o projeto.</span>
-            <br/>
-            <span
-              class="text-spacing"
-              style="font-size: 10pt"
-            >
-              Bandas ordenadas aleatoriamente. Clique na banda para acessar o material.
-            </span>
-          </p>
-          <div>
-            <a
-              href="https://www.instagram.com/undergroundlivestreaming/"
-              target="_blank"
-            >
-              <button
-                class="button-layout button-newsletter"
-                type="button"
+
+    <div id="artists">
+      <div
+        class="landing-row animate__animated animate__pulse animate__infinite"
+        id="artists-counting"
+      >
+        <p class="landing-big-title-section">FAZENDO A CONTAGEM DAS BANDAS...</p>
+      </div>
+      <div
+        class="animate__animated animate__fadeIn animate__slower"
+        id="box-artists"
+        style="display: none"
+      >
+        <div class="landing-row">
+          <div class="landing-top landing-row-v-center">
+            <p class="landing-title-section">
+              SÃO
+              <strong id="amount-artists"></strong>
+              <span>BANDAS APOIANDO O PROJETO</span>
+              <br/>
+              <span
+                class="text-spacing"
+                style="font-size: 10pt"
               >
-                INDIQUE UMA BANDA
-                <br/>
-                <span style="font-size: 10pt; letter-spacing: 1px">Envie-nos mensagem no instagram</span>
-              </button>
-            </a>
+              As bandas estão ordenadas aleatoriamente.
+                <br>
+              Clique na banda para acessar o material.
+            </span>
+            </p>
+            <div>
+              <a
+                href="https://www.instagram.com/undergroundlivestreaming/"
+                target="_blank"
+              >
+                <button
+                  class="button-layout button-newsletter"
+                  type="button"
+                >
+                  INDIQUE UMA BANDA
+                  <br/>
+                  <span style="font-size: 10pt; letter-spacing: 1px">Envie-nos mensagem no instagram</span>
+                </button>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="landing-row">
-        <div
-          class="list-artists"
-          id="artists-list"
-        ></div>
+        <div>
+          <div
+            class="list-artists"
+            id="artists-list"
+          ></div>
+        </div>
       </div>
     </div>
-    <div class="landing-row footer">
+
+    <div class="landing-row">
+      <div
+        id="faq"
+        class="landing-title-section"
+      >
+        SOBRE O PROJETO
+      </div>
+      {% include 'faq.twig' %}
+    </div>
+
+    <footer class="landing-row footer">
       <div>
         <img
           src="{{ asset('images/chicao-logo-w.png') }}"
@@ -282,7 +327,8 @@
         <p>undergroundlivestreaming@gmail.com</p>
         <p>&#169; 2020 UNDERGOUND LIVE STREAMING | TODOS DIREITOS RESERVADOS</p>
       </div>
-    </div>
+    </footer>
+
     <input
       hidden="hidden"
       id="copyurl"
@@ -290,7 +336,10 @@
       value=""
     />
   </div>
-  <div id="base_data" data-baseurl="{{ baseURL }}"></div>
+  <div
+    id="base_data"
+    data-baseurl="{{ baseURL }}"
+  ></div>
   <script src="{{ asset('scripts/landing_page.js') }}"></script>
 </div>
 </body>

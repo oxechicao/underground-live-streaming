@@ -4,12 +4,9 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\Document\Artists;
+use Doctrine\ODM\MongoDB\DocumentManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\RequestStack;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
-use Symfony\Component\HttpFoundation\UrlHelper;
 use Symfony\Component\Routing\Annotation\Route;
 
 class Home extends AbstractController
@@ -17,7 +14,7 @@ class Home extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function index(SessionInterface $session, UrlHelper $urlHelper)
+    public function index(DocumentManager $dm)
     {
         return $this->render(
             'home.html.twig',
