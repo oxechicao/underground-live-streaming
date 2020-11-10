@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/solid.min.css" integrity="sha512-SazV6tF6Ko4GxhyIZpKoXiKYndqzh7+cqxl9HDH7DGSpjkCN3QLqTAlhJHJnKxu3/2rfCsltzwFC4CmxZE1hPg==" crossorigin="anonymous" />
+
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        #simple-banner-box {
+            height: 100%;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .simple-banner-content {
+            display: flex;
+            justify-content: {{ justify }};
+            width: 100%;
+        }
+
+        #simple-music-text {
+            font-size: {{ fontSize }}pt;
+            font-weight: bolder;
+            font-family: cursive;
+        }
+
+        #simple-artist-text {
+            filter: invert(1);
+            font-size: {{ fontSize - 5 }}pt;
+            color: #{{ color }};
+            text-transform: uppercase;
+            font-family: fantasy;
+            letter-spacing: 2px;
+        }
+
+        #simples-music-box {
+            padding: 3px 10px;
+        }
+
+        #simple-artist-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #{{ color }};
+            border-radius: 5px;
+            padding: 3px 8px;
+        }
+
+        #music-icon {
+            margin-right: 5px;
+            font-size: {{ fontSize + 8 }}pt;
+            color: #{{ color }};
+        }
+    </style>
+</head>
+
+<body>
+    <div id="simple-banner-box" data-baseurl="{{ baseURL }}" data-refresh="{{ refresh }}">
+        <div class="simple-banner-content" style="color: #{{ color }};">
+            <div id="music-icon">
+                <i class="fas fa-music"></i>
+            </div>
+            <div id="simples-music-box">
+                <span id="simple-music-text">-</span>
+            </div>
+            <div id="simple-artist-box">
+                <span id="simple-artist-text">-</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    const baseURL = document.getElementById('simple-banner-box').dataset.baseurl
+    const refresh = document.getElementById('simple-banner-box').dataset.refresh
+
+    var currentSong = ''
+    var currentArtist = ''
+
+    const setSong = () => fetch(`${baseURL}/spotify/current-song/${refresh}/650`)
+        .then(response => response.json())
+        .then(result => {
+            const {
+                albumImage,
+                songName,
+                artists,
+                sizeBannerBg
+            } = result
+
+            let changed = false
+
+            if (currentSong !== songName || currentArtist !== artists) {
+                currentSong = songName
+                currentArtist = artists
+                document.getElementById('simple-music-text').innerHTML = result.songName
+                document.getElementById('simple-artist-text').innerHTML = result.artists
+            }
+        })
+
+
+    setSong()
+    setInterval(() => {
+        setSong()
+    }, 10000)
+</script>
+
+</html>
