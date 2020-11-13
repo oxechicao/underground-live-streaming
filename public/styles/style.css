@@ -146,6 +146,11 @@ a {
 
 .landing-model-urls {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.landing-model-urls > div {
+    padding: 10px;
 }
 
 .landing-faca-live {

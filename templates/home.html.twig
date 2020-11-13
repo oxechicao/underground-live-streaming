@@ -25,7 +25,9 @@
 <div id="body">
   <div class="container">
     <div class="landing-top">
-      <div class="logo-site"><img src="{{ asset('images/logo.png') }}"/></div>
+      <div class="logo-site">
+        <img src="{{ asset('images/logo.png') }}"/>
+      </div>
       <div class="landing-title-section follow-us">
         <div class="landing-menu">
           <div class="follow-us-item follow-us-text">
@@ -176,7 +178,7 @@
             {% endif %}
 
           </div>
-          <div style="margin-left: 4rem">
+          <div>
             <div>
               <span class="text-spacing">Modelo Simplificador (800x120)</span>
               <br/>
@@ -231,7 +233,63 @@
               </div>
             {% endif %}
           </div>
+          {# <div>
+            <div>
+              <span class="text-spacing">Modelo Minificado</span>
+              <br/>
+              <img
+                src="{{ asset('images/modelo-min.jpg') }}"
+                height="40px"
+              />
+            </div>
+            {% if app.session.get('refresh') %}
+              <div class="landing-top buttons-links">
+                <div class="botoes-link">
+                  <button
+                    class="button-layout button-banner"
+                    type="button"
+                    onclick="copiarUrl('ma')"
+                  >
+                    Copiar à esquerda
+                  </button>
+                  <a
+                    id="ma-l-link"
+                    target="_blank"
+                    href="{{ path('spotify.ma.l', {'token': app.session.get('token'), 'refresh': app.session.get('refresh')}) }}"
+                  >
+                    <img
+                      src="{{ asset('images/external-link.png') }}"
+                      style="filter: invert(1)"
+                      width="16px"
+                    />
+                  </a>
+                </div>
+                <div class="botoes-link">
+                  <button
+                    class="button-layout button-banner"
+                    type="button"
+                    onclick="copiarUrl('mar')"
+                  >
+                    Copiar à direita
+                  </button>
+                  <a
+                    id="ma-r-link"
+                    target="_blank"
+                    href="{{ path('spotify.ma.r',{'token': app.session.get('token'), 'refresh': app.session.get('refresh')}) }}"
+                  >
+                    <img
+                      src="{{ asset('images/external-link.png') }}"
+                      style="filter: invert(1)"
+                      width="16px"
+                    />
+                  </a>
+                </div>
+              </div>
+            {% endif %}
+          </div> #}
         </div>
+
+
         <div class="landing-faca-live">
           <img src="{{ asset('images/Raio.png') }}"/>
           <img src="{{ asset('images/faca-live.png') }}"/>
